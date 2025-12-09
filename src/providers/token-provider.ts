@@ -331,6 +331,22 @@ export const WETH_POLYGON_MUMBAI = new Token(
   'Wrapped Ether'
 );
 
+export const USDTX_JOC_TESTNET = new Token(
+  ChainId.JOC_TESTNET,
+  '0x382eb09D8cE59968683001947EF04cB34f7A180E',
+  6,
+  'UDSTX',
+  'USDTX'
+);
+
+export const USDCX_JOC_TESTNET = new Token(
+  ChainId.JOC_TESTNET,
+  '0x367f476c9B5fA1e64F3d7EE19c3E4E2f76D42200',
+  6,
+  'UDSTX',
+  'USDTX'
+);
+
 // BNB chain Tokens
 export const BTC_BNB = new Token(
   ChainId.BNB,
