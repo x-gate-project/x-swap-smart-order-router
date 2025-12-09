@@ -34,11 +34,13 @@ import {
   USDC_OPTIMISM_GOERLI,
   USDC_POLYGON,
   USDC_SEPOLIA,
+  USDCX_JOC_TESTNET,
   USDT_ARBITRUM,
   USDT_BNB,
   USDT_MAINNET,
   USDT_OPTIMISM,
   USDT_OPTIMISM_GOERLI,
+  USDTX_JOC_TESTNET,
   WBTC_ARBITRUM,
   WBTC_GNOSIS,
   WBTC_MAINNET,
@@ -171,6 +173,10 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
   ],
   [ChainId.BASE]: [
     USDC_BASE,
+  ],
+  [ChainId.JOC_TESTNET]: [
+    USDTX_JOC_TESTNET,
+    USDCX_JOC_TESTNET,
   ],
 };
 
