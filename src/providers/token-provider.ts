@@ -348,7 +348,7 @@ export const USDCX_JOC_TESTNET = new Token(
 );
 
 export const USDTX_JOC_MAINNET = new Token(
-  ChainId.JOC_TESTNET,
+  ChainId.JOC_MAINNET,
   '0xe18e898E5843E8a8EA7A1C4AF08730DcA6689aA9',
   6,
   'USDTX',
@@ -356,7 +356,7 @@ export const USDTX_JOC_MAINNET = new Token(
 );
 
 export const USDCX_JOC_MAINNET = new Token(
-  ChainId.JOC_TESTNET,
+  ChainId.JOC_MAINNET,
   '0x538F7567f16cbE40d051e9f2928d215343D9A13A',
   6,
   'USDCX',
