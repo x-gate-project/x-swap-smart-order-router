@@ -335,7 +335,7 @@ export const USDTX_JOC_TESTNET = new Token(
   ChainId.JOC_TESTNET,
   '0x382eb09D8cE59968683001947EF04cB34f7A180E',
   6,
-  'UDSTX',
+  'USDTX',
   'USDTX'
 );
 
@@ -343,8 +343,24 @@ export const USDCX_JOC_TESTNET = new Token(
   ChainId.JOC_TESTNET,
   '0x367f476c9B5fA1e64F3d7EE19c3E4E2f76D42200',
   6,
-  'UDSTX',
+  'USDCX',
+  'USDCX'
+);
+
+export const USDTX_JOC_MAINNET = new Token(
+  ChainId.JOC_TESTNET,
+  '0xe18e898E5843E8a8EA7A1C4AF08730DcA6689aA9',
+  6,
+  'USDTX',
   'USDTX'
+);
+
+export const USDCX_JOC_MAINNET = new Token(
+  ChainId.JOC_TESTNET,
+  '0x538F7567f16cbE40d051e9f2928d215343D9A13A',
+  6,
+  'USDCX',
+  'USDCX'
 );
 
 // BNB chain Tokens

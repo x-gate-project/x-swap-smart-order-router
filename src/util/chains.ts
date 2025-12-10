@@ -17,6 +17,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.AVALANCHE,
   ChainId.BASE,
   ChainId.JOC_TESTNET,
+  ChainId.JOC_MAINNET,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -82,6 +83,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.BASE_GOERLI;
     case 10081:
       return ChainId.JOC_TESTNET;
+    case 81:
+      return ChainId.JOC_MAINNET;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -106,6 +109,7 @@ export enum ChainName {
   BASE = 'base-mainnet',
   BASE_GOERLI = 'base-goerli',
   JOC_TESTNET = 'joc-testnet',
+  JOC_MAINNET = 'joc-mainnet',
 }
 
 export enum NativeCurrencyName {
@@ -118,6 +122,7 @@ export enum NativeCurrencyName {
   BNB = 'BNB',
   AVALANCHE = 'AVAX',
   JOC_TESTNET = 'JOCT',
+  JOC_MAINNET = 'JOC',
 }
 
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
@@ -202,6 +207,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.AVALANCHE]: NativeCurrencyName.AVALANCHE,
   [ChainId.BASE]: NativeCurrencyName.ETHER,
   [ChainId.JOC_TESTNET]: NativeCurrencyName.JOC_TESTNET,
+  [ChainId.JOC_MAINNET]: NativeCurrencyName.JOC_MAINNET,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -242,6 +248,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.BASE_GOERLI;
     case 10081:
       return ChainName.JOC_TESTNET;
+    case 81:
+      return ChainName.JOC_MAINNET;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -283,6 +291,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_BASE!;
     case ChainId.JOC_TESTNET:
       return process.env.JSON_RPC_PROVIDER_JOC_TESTNET!;
+    case ChainId.JOC_MAINNET:
+      return process.env.JSON_RPC_PROVIDER_JOC_MAINNET!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -416,6 +426,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     18,
     'WJOCT',
     'Wrapped WJOCT'
+  ),
+  [ChainId.JOC_MAINNET]: new Token(
+    ChainId.JOC_MAINNET,
+    '0x03527b82f384184097295fc60be0B59B8FE06E00',
+    18,
+    'WJOC',
+    'Wrapped JOC'
   ),
 };
 
@@ -567,21 +584,26 @@ class AvalancheNativeCurrency extends NativeCurrency {
   }
 }
 
-function isJoc(chainId: number): chainId is ChainId.JOC_TESTNET {
-  return chainId === ChainId.JOC_TESTNET;
+function isJoc(chainId: number): chainId is ChainId.JOC_TESTNET | ChainId.JOC_MAINNET {
+  return chainId === ChainId.JOC_TESTNET || chainId === ChainId.JOC_MAINNET;
 }
+
 class JocNativeCurrency extends NativeCurrency {
   equals(other: Currency): boolean {
     return other.isNative && other.chainId === this.chainId;
   }
   get wrapped() {
     if (!isJoc(this.chainId)) throw new Error('Not joc');
-    const wrapped = WRAPPED_NATIVE_CURRENCY[this.chainId];
-    return wrapped;
+    const nativeCurrency =  WRAPPED_NATIVE_CURRENCY[this.chainId];
+    if (nativeCurrency) {
+      return nativeCurrency;
+    }
+    throw new Error(`Does not support this chain ${this.chainId}`);
   }
+  
   constructor(chainId: number) {
     if (!isJoc(chainId)) throw new Error('Not joc');
-    super(chainId, 18, 'JOCT', 'JOC Testnet');
+    super(chainId, 18, 'JOC', 'Japan Open Chain Token');
   }
 }
 

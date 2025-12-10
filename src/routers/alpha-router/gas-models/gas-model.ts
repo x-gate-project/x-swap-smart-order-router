@@ -28,6 +28,7 @@ import {
   USDC_OPTIMISM_GOERLI,
   USDC_POLYGON,
   USDC_SEPOLIA,
+  USDCX_JOC_MAINNET,
   USDCX_JOC_TESTNET,
   USDT_ARBITRUM,
   USDT_BNB,
@@ -35,6 +36,7 @@ import {
   USDT_MAINNET,
   USDT_OPTIMISM,
   USDT_OPTIMISM_GOERLI,
+  USDTX_JOC_MAINNET,
   USDTX_JOC_TESTNET,
   WBTC_GOERLI,
 } from '../../../providers/token-provider';
@@ -77,6 +79,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.AVALANCHE]: [DAI_AVAX, USDC_AVAX],
   [ChainId.BASE]: [USDC_BASE],
   [ChainId.JOC_TESTNET]: [USDTX_JOC_TESTNET, USDCX_JOC_TESTNET],
+  [ChainId.JOC_MAINNET]: [USDTX_JOC_MAINNET, USDCX_JOC_MAINNET],
 };
 
 export type L1ToL2GasCosts = {

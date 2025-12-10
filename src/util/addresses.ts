@@ -21,6 +21,7 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].v3CoreFactoryAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].v3CoreFactoryAddress,
   [ChainId.JOC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_TESTNET].v3CoreFactoryAddress,
+  [ChainId.JOC_MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_MAINNET].v3CoreFactoryAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -36,6 +37,7 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].quoterAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].quoterAddress,
   [ChainId.JOC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_TESTNET].quoterAddress,
+  [ChainId.JOC_MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_MAINNET].quoterAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -43,6 +45,7 @@ export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = {
   [ChainId.MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.MAINNET].v1MixedRouteQuoterAddress,
   [ChainId.GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOERLI].v1MixedRouteQuoterAddress,
   [ChainId.JOC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_TESTNET].v1MixedRouteQuoterAddress,
+  [ChainId.JOC_MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_MAINNET].v1MixedRouteQuoterAddress,
 };
 
 export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
@@ -57,6 +60,7 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].multicallAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].multicallAddress,
   [ChainId.JOC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_TESTNET].multicallAddress,
+  [ChainId.JOC_MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_MAINNET].multicallAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -173,5 +177,12 @@ export const WETH9: {
     18,
     'WJOCT',
     'Wrapped JOCT'
+  ),
+  [ChainId.JOC_MAINNET]: new Token(
+    ChainId.JOC_MAINNET,
+    '0x03527b82f384184097295fc60be0B59B8FE06E00',
+    18,
+    'WJOC',
+    'Wrapped JOC'
   ),
 };
