@@ -25,6 +25,8 @@ export const V2_SUPPORTED = [
   ChainId.MAINNET,
   ChainId.GOERLI,
   ChainId.SEPOLIA,
+  ChainId.JOC_MAINNET,
+  ChainId.JOC_TESTNET,
 ];
 
 export const HAS_L1_FEE = [
