@@ -188,7 +188,13 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'ETH',
     'ETHER',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-  ]
+  ],
+  [ChainId.JOC_TESTNET]: [
+    'JOCT',
+  ],
+  [ChainId.JOC_MAINNET]: [
+    'JOC',
+  ],
 };
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
