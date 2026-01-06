@@ -608,10 +608,10 @@ class JocNativeCurrency extends NativeCurrency {
     }
     throw new Error(`Does not support this chain ${this.chainId}`);
   }
-  
+
   constructor(chainId: number) {
     if (!isJoc(chainId)) throw new Error('Not joc');
-    super(chainId, 18, 'JOC', 'Japan Open Chain Token');
+    super(chainId, 18, 'JOC', 'JOC Coin');
   }
 }
 
