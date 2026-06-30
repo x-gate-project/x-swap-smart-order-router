@@ -49,6 +49,34 @@ export class OptimismGasDataProvider
    * scalar, decimals, and overhead values.
    */
   public async getGasData(): Promise<OptimismGasData> {
+    const ecotoneNames = ['l1BaseFee', 'baseFeeScalar', 'decimals'];
+    const ecotoneTx =
+      await this.multicall2Provider.callMultipleFunctionsOnSameContract<
+        undefined,
+        [BigNumber]
+      >({
+        address: this.gasOracleAddress,
+        contractInterface: GasPriceOracle__factory.createInterface(),
+        functionNames: ecotoneNames,
+      });
+
+    if (
+      ecotoneTx.results[0]?.success &&
+      ecotoneTx.results[1]?.success &&
+      ecotoneTx.results[2]?.success
+    ) {
+      const { result: l1BaseFee } = ecotoneTx.results[0];
+      const { result: baseFeeScalar } = ecotoneTx.results[1];
+      const { result: decimals } = ecotoneTx.results[2];
+
+      return {
+        l1BaseFee: l1BaseFee[0],
+        scalar: baseFeeScalar[0],
+        decimals: decimals[0],
+        overhead: BigNumber.from(0),
+      };
+    }
+
     const funcNames = ['l1BaseFee', 'scalar', 'decimals', 'overhead'];
     const tx =
       await this.multicall2Provider.callMultipleFunctionsOnSameContract<
