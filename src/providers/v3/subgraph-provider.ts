@@ -61,6 +61,10 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
     'https://api.gu.net/v1/subgraphs/evm/43114/uniswap/v3',
   [ChainId.BASE]:
     'https://api.gu.net/v1/subgraphs/evm/8453/uniswap/v3',
+  [ChainId.JOC_MAINNET]:
+    'https://api.gu.net/v1/subgraphs/evm/81/uniswap/v3',
+  [ChainId.JOC_TESTNET]:
+    'https://api.gu.net/v1/subgraphs/evm/10081/uniswap/v3',
 };
 
 const PAGE_SIZE = 1000; // 1k is max possible query size from subgraph.
