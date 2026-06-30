@@ -42,8 +42,8 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
 };
 
 export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = {
-  [ChainId.MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.MAINNET].v1MixedRouteQuoterAddress,
-  [ChainId.GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOERLI].v1MixedRouteQuoterAddress,
+  [ChainId.MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.MAINNET].v1MixedRouteQuoterAddress || "0x84E44095eeBfEC7793Cd7d5b57B7e401D7f1cA2E",
+  [ChainId.GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOERLI].v1MixedRouteQuoterAddress || "0xBa60b6e6fF25488308789E6e0A65D838be34194e",
   [ChainId.JOC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_TESTNET].v1MixedRouteQuoterAddress,
   [ChainId.JOC_MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_MAINNET].v1MixedRouteQuoterAddress,
 };
