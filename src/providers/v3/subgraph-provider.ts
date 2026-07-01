@@ -46,23 +46,25 @@ export const printV2SubgraphPool = (s: V2SubgraphPool) =>
 
 const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.MAINNET]:
-    'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3',
+    'https://api.gu.net/v1/subgraphs/evm/1/uniswap/v3',
   [ChainId.OPTIMISM]:
-    'https://api.thegraph.com/subgraphs/name/ianlapham/optimism-post-regenesis',
+    'https://api.gu.net/v1/subgraphs/evm/10/uniswap/v3',
   [ChainId.ARBITRUM_ONE]:
-    'https://api.thegraph.com/subgraphs/name/ianlapham/arbitrum-minimal',
+    'https://api.gu.net/v1/subgraphs/evm/42161/uniswap/v3',
   [ChainId.POLYGON]:
-    'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v3-polygon',
+    'https://api.gu.net/v1/subgraphs/evm/137/uniswap/v3',
   [ChainId.CELO]:
-    'https://api.thegraph.com/subgraphs/name/jesse-sawa/uniswap-celo',
-  [ChainId.GOERLI]:
-    'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v3-gorli',
+    'https://api.gu.net/v1/subgraphs/evm/42220/uniswap/v3',
   [ChainId.BNB]:
-    'https://api.thegraph.com/subgraphs/name/ilyamk/uniswap-v3---bnb-chain',
+    'https://api.gu.net/v1/subgraphs/evm/56/uniswap/v3',
   [ChainId.AVALANCHE]:
-    'https://api.thegraph.com/subgraphs/name/lynnshaoyu/uniswap-v3-avax',
-  [ChainId.BASE]: 
-    'https://api.studio.thegraph.com/query/48211/uniswap-v3-base/version/latest',
+    'https://api.gu.net/v1/subgraphs/evm/43114/uniswap/v3',
+  [ChainId.BASE]:
+    'https://api.gu.net/v1/subgraphs/evm/8453/uniswap/v3',
+  [ChainId.JOC_MAINNET]:
+    'https://api.gu.net/v1/subgraphs/evm/81/uniswap/v3',
+  [ChainId.JOC_TESTNET]:
+    'https://api.gu.net/v1/subgraphs/evm/10081/uniswap/v3',
 };
 
 const PAGE_SIZE = 1000; // 1k is max possible query size from subgraph.

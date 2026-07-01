@@ -37,7 +37,7 @@ type RawV2SubgraphPool = {
 
 const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.MAINNET]:
-    'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v2-dev',
+    'https://api.gu.net/v1/subgraphs/evm/1/uniswap/v2',
 };
 
 const threshold = 0.025;
