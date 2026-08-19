@@ -44,6 +44,9 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.BASE]: [],
   [ChainId.JOC_TESTNET]: [],
   [ChainId.JOC_MAINNET]: [],
+  [ChainId.ARBITRUM_SEPOLIA]: [],
+  [ChainId.BASE_SEPOLIA]: [],
+  [ChainId.AVALANCHE_FUJI]: [],
 };
 
 /**

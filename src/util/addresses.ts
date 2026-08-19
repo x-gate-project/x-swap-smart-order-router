@@ -22,6 +22,9 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].v3CoreFactoryAddress,
   [ChainId.JOC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_TESTNET].v3CoreFactoryAddress,
   [ChainId.JOC_MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_MAINNET].v3CoreFactoryAddress,
+  [ChainId.ARBITRUM_SEPOLIA]: CHAIN_TO_ADDRESSES_MAP[ChainId.ARBITRUM_SEPOLIA].v3CoreFactoryAddress,
+  [ChainId.BASE_SEPOLIA]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_SEPOLIA].v3CoreFactoryAddress,
+  [ChainId.AVALANCHE_FUJI]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE_FUJI].v3CoreFactoryAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -38,6 +41,9 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].quoterAddress,
   [ChainId.JOC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_TESTNET].quoterAddress,
   [ChainId.JOC_MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_MAINNET].quoterAddress,
+  [ChainId.ARBITRUM_SEPOLIA]: CHAIN_TO_ADDRESSES_MAP[ChainId.ARBITRUM_SEPOLIA].quoterAddress,
+  [ChainId.BASE_SEPOLIA]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_SEPOLIA].quoterAddress,
+  [ChainId.AVALANCHE_FUJI]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE_FUJI].quoterAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -61,6 +67,9 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].multicallAddress,
   [ChainId.JOC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_TESTNET].multicallAddress,
   [ChainId.JOC_MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.JOC_MAINNET].multicallAddress,
+  [ChainId.ARBITRUM_SEPOLIA]: CHAIN_TO_ADDRESSES_MAP[ChainId.ARBITRUM_SEPOLIA].multicallAddress,
+  [ChainId.BASE_SEPOLIA]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_SEPOLIA].multicallAddress,
+  [ChainId.AVALANCHE_FUJI]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE_FUJI].multicallAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -106,6 +115,7 @@ export const WETH9: {
     | ChainId.MOONBEAM
     | ChainId.BNB
     | ChainId.AVALANCHE
+    | ChainId.AVALANCHE_FUJI
   >]: Token;
 } = {
   [ChainId.MAINNET]: new Token(
@@ -184,5 +194,19 @@ export const WETH9: {
     18,
     'WJOC',
     'Wrapped JOC'
+  ),
+  [ChainId.ARBITRUM_SEPOLIA]: new Token(
+    ChainId.ARBITRUM_SEPOLIA,
+    '0x980B62Da83eFf3D4576C647993b0c1D7faf17c73',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.BASE_SEPOLIA]: new Token(
+    ChainId.BASE_SEPOLIA,
+    '0x4200000000000000000000000000000000000006',
+    18,
+    'WETH',
+    'Wrapped Ether'
   ),
 };
