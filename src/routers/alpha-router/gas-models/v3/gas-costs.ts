@@ -17,11 +17,14 @@ export const BASE_SWAP_COST = (id: ChainId): BigNumber => {
     case ChainId.OPTIMISM_GOERLI:
     case ChainId.BNB:
     case ChainId.AVALANCHE:
+    case ChainId.AVALANCHE_FUJI:
     case ChainId.BASE:
     case ChainId.BASE_GOERLI:
+    case ChainId.BASE_SEPOLIA:
       return BigNumber.from(2000);
     case ChainId.ARBITRUM_ONE:
     case ChainId.ARBITRUM_GOERLI:
+    case ChainId.ARBITRUM_SEPOLIA:
       return BigNumber.from(5000);
     case ChainId.POLYGON:
     case ChainId.POLYGON_MUMBAI:
@@ -49,14 +52,17 @@ export const COST_PER_INIT_TICK = (id: ChainId): BigNumber => {
     case ChainId.SEPOLIA:
     case ChainId.BNB:
     case ChainId.AVALANCHE:
+    case ChainId.AVALANCHE_FUJI:
       return BigNumber.from(31000);
     case ChainId.OPTIMISM:
     case ChainId.OPTIMISM_GOERLI:
     case ChainId.BASE:
     case ChainId.BASE_GOERLI:
+    case ChainId.BASE_SEPOLIA:
       return BigNumber.from(31000);
     case ChainId.ARBITRUM_ONE:
     case ChainId.ARBITRUM_GOERLI:
+    case ChainId.ARBITRUM_SEPOLIA:
       return BigNumber.from(31000);
     case ChainId.POLYGON:
     case ChainId.POLYGON_MUMBAI:
@@ -84,11 +90,14 @@ export const COST_PER_HOP = (id: ChainId): BigNumber => {
     case ChainId.OPTIMISM:
     case ChainId.OPTIMISM_GOERLI:
     case ChainId.AVALANCHE:
+    case ChainId.AVALANCHE_FUJI:
     case ChainId.BASE:
     case ChainId.BASE_GOERLI:
+    case ChainId.BASE_SEPOLIA:
       return BigNumber.from(80000);
     case ChainId.ARBITRUM_ONE:
     case ChainId.ARBITRUM_GOERLI:
+    case ChainId.ARBITRUM_SEPOLIA:
       return BigNumber.from(80000);
     case ChainId.POLYGON:
     case ChainId.POLYGON_MUMBAI:

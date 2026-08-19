@@ -503,7 +503,7 @@ export const USDC_BASE = new Token(
   'USD Base Coin'
 )
 
-// Base Goerli Tokens 
+// Base Goerli Tokens
 export const USDC_BASE_GOERLI = new Token(
   ChainId.BASE_GOERLI,
   '0x853154e2A5604E5C74a2546E2871Ad44932eB92C',
@@ -569,6 +569,102 @@ export const WBTC_MOONBEAM = new Token(
   'WBTC',
   'Wrapped BTC bridged using Multichain'
 );
+
+export const USDC_ARBITRUM_SEPOLIA = new Token(
+  ChainId.ARBITRUM_SEPOLIA,
+  '0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d',
+  6,
+  'USDC',
+  'USD//C'
+);
+
+export const USDC_BASE_SEPOLIA = new Token(
+  ChainId.BASE_SEPOLIA,
+  '0x036CbD53842c5426634e7929541eC2318f3dCF7e',
+  6,
+  'USDC',
+  'USDC',
+)
+
+export const USDC_AVALANCHE_FUJI = new Token(
+  ChainId.AVALANCHE_FUJI,
+  '0x5425890298aed601595a70AB815c96711a31Bc65',
+  6,
+  'USDC',
+  'USDC',
+)
+
+export const USDTX_ARBITRUM_SEPOLIA = new Token(
+  ChainId.ARBITRUM_SEPOLIA,
+  '0xa937c170cd3fce86c246f19899642fa075064c23',
+  6,
+  'USDTX',
+  'USDTX',
+)
+
+export const USDTX_BASE_SEPOLIA = new Token(
+  ChainId.BASE_SEPOLIA,
+  '0xa937c170cd3fce86c246f19899642fa075064c23',
+  6,
+  'USDTX',
+  'USDTX',
+)
+
+export const USDTX_AVALANCHE_FUJI = new Token(
+  ChainId.AVALANCHE_FUJI,
+  '0xa937c170cd3fce86c246f19899642fa075064c23',
+  6,
+  'USDTX',
+  'USDTX',
+)
+
+export const USDCX_ARBITRUM_SEPOLIA = new Token(
+  ChainId.ARBITRUM_SEPOLIA,
+  '0x154b535cabd5397fafe85b8a62f6ccdc8b2a1fdb',
+  6,
+  'USDCX',
+  'USDCX',
+)
+
+export const USDCX_BASE_SEPOLIA = new Token(
+  ChainId.BASE_SEPOLIA,
+  '0x154b535cabd5397fafe85b8a62f6ccdc8b2a1fdb',
+  6,
+  'USDCX',
+  'USDCX',
+)
+
+export const USDCX_AVALANCHE_FUJI = new Token(
+  ChainId.AVALANCHE_FUJI,
+  '0x154b535cabd5397fafe85b8a62f6ccdc8b2a1fdb',
+  6,
+  'USDCX',
+  'USDCX',
+)
+
+export const JOCX_ARBITRUM_SEPOLIA = new Token(
+  ChainId.ARBITRUM_SEPOLIA,
+  '0xb1660f8cdbf2102ac74c6cd6d7cd6a65e481e5fe',
+  18,
+  'JOCX',
+  'JOCX',
+)
+
+export const JOCX_BASE_SEPOLIA = new Token(
+  ChainId.BASE_SEPOLIA,
+  '0xb1660f8cdbf2102ac74c6cd6d7cd6a65e481e5fe',
+  18,
+  'JOCX',
+  'JOCX',
+)
+
+export const JOCX_AVALANCHE_FUJI = new Token(
+  ChainId.AVALANCHE_FUJI,
+  '0xb1660f8cdbf2102ac74c6cd6d7cd6a65e481e5fe',
+  18,
+  'JOCX',
+  'JOCX',
+)
 
 export class TokenProvider implements ITokenProvider {
   constructor(
@@ -827,6 +923,12 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_BASE;
     case ChainId.BASE_GOERLI:
       return USDC_BASE_GOERLI;
+    case ChainId.ARBITRUM_SEPOLIA:
+      return USDC_ARBITRUM_SEPOLIA;
+    case ChainId.BASE_SEPOLIA:
+      return USDC_BASE_SEPOLIA;
+    case ChainId.AVALANCHE_FUJI:
+      return USDC_AVALANCHE_FUJI;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }
