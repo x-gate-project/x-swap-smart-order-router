@@ -18,6 +18,9 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.BASE,
   ChainId.JOC_TESTNET,
   ChainId.JOC_MAINNET,
+  ChainId.ARBITRUM_SEPOLIA,
+  ChainId.BASE_SEPOLIA,
+  ChainId.AVALANCHE_FUJI
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -36,6 +39,8 @@ export const HAS_L1_FEE = [
   ChainId.ARBITRUM_GOERLI,
   ChainId.BASE,
   ChainId.BASE_GOERLI,
+  ChainId.ARBITRUM_SEPOLIA,
+  ChainId.BASE_SEPOLIA,
 ];
 
 export const NETWORKS_WITH_SAME_UNISWAP_ADDRESSES = [
@@ -87,6 +92,12 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.JOC_TESTNET;
     case 81:
       return ChainId.JOC_MAINNET;
+    case 421614:
+            return ChainId.ARBITRUM_SEPOLIA;
+    case 84532:
+            return ChainId.BASE_SEPOLIA;
+    case 43113:
+            return ChainId.AVALANCHE_FUJI;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -112,6 +123,9 @@ export enum ChainName {
   BASE_GOERLI = 'base-goerli',
   JOC_TESTNET = 'joc-testnet',
   JOC_MAINNET = 'joc-mainnet',
+  ARBITRUM_SEPOLIA = 'arbitrum-sepolia',
+  BASE_SEPOLIA = 'base-sepolia',
+  AVALANCHE_FUJI = 'avalanche-fuji'
 }
 
 export enum NativeCurrencyName {
@@ -195,6 +209,21 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
   [ChainId.JOC_MAINNET]: [
     'JOC',
   ],
+  [ChainId.ARBITRUM_SEPOLIA]: [
+    'ETH',
+    'ETHER',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
+  [ChainId.AVALANCHE_FUJI]: [
+    'AVAX',
+    'AVALANCHE',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
+  [ChainId.BASE_SEPOLIA]: [
+    'ETH',
+    'ETHER',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
 };
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
@@ -258,6 +287,12 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.JOC_TESTNET;
     case 81:
       return ChainName.JOC_MAINNET;
+    case 421614:
+      return ChainName.ARBITRUM_SEPOLIA;
+    case 84532:
+      return ChainName.BASE_SEPOLIA;
+    case 43113:
+      return ChainName.AVALANCHE_FUJI;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -301,6 +336,12 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_JOC_TESTNET!;
     case ChainId.JOC_MAINNET:
       return process.env.JSON_RPC_PROVIDER_JOC_MAINNET!;
+    case ChainId.ARBITRUM_SEPOLIA:
+      return process.env.JSON_RPC_PROVIDER_ARBITRUM_SEPOLIA!;
+    case ChainId.BASE_SEPOLIA:
+      return process.env.JSON_RPC_PROVIDER_BASE_SEPOLIA!;
+    case ChainId.AVALANCHE_FUJI:
+      return process.env.JSON_RPC_PROVIDER_AVALANCHE_FUJI!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -441,6 +482,27 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     18,
     'WJOC',
     'Wrapped JOC'
+  ),
+  [ChainId.ARBITRUM_SEPOLIA]: new Token(
+    ChainId.ARBITRUM_SEPOLIA,
+    '0x980B62Da83eFf3D4576C647993b0c1D7faf17c73',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.BASE_SEPOLIA]: new Token(
+    ChainId.BASE_SEPOLIA,
+    '0x4200000000000000000000000000000000000006',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.AVALANCHE_FUJI]: new Token(
+    ChainId.AVALANCHE_FUJI,
+    '0xd00ae08403B9bbb9124bB305C09058E32C39A48c',
+    18,
+    'WAVAX',
+    'Wrapped AVAX'
   ),
 };
 
